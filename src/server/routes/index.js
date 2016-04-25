@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var http = require('http');
-var request = require('request');
+var rp = require('request-promise');
 
 var apiKey = '475233687d4252104a1a4ff3ae2965';
 
@@ -9,12 +9,14 @@ var apiKey = '475233687d4252104a1a4ff3ae2965';
 // get all categories
 router.get('/categories', function(req, res, next) {
 
-	request('https://api.meetup.com/2/categories?key=' + apiKey + '&sign=true&photo-host=public&page=40', function(error, response, body){
-		if(!error && response.statusCode == 200){
-			var parseData = JSON.parse(body);
+	rp('https://api.meetup.com/2/categories?key=' + apiKey + '&sign=true&photo-host=public&page=40')
+		.then(function(data){
+			var parseData = JSON.parse(data);
 			res.send(parseData.results);
-		}
-	})
+		})
+		.catch(function(error){
+			return error
+		})
 
 });
 
@@ -23,12 +25,14 @@ router.get('/categories/:id/groups', function(req, res, next) {
 
 	var id = req.params.id;
 
-	request('https://api.meetup.com/find/groups?key=' + apiKey + '&sign=true&photo-host=public&category=' + id + '&page=20', function(error, response, body){
-		if(!error && response.statusCode == 200){
-			var parseData = JSON.parse(body);
+	rp('https://api.meetup.com/find/groups?key=' + apiKey + '&sign=true&photo-host=public&category=' + id + '&page=20')
+		.then(function(data){
+			var parseData = JSON.parse(data);
 			res.send(parseData);
-		}
-	})
+		})
+		.catch(function(error){
+			return error
+		})
 
 });
 
@@ -37,12 +41,14 @@ router.get('/groups/:name', function(req, res, next) {
 
 	var name = req.params.name;
 
-	request('https://api.meetup.com/' + name + '/events?key=' + apiKey + '&sign=true&photo-host=public&page=20', function(error, response, body){
-		if(!error && response.statusCode == 200){
-			var parseData = JSON.parse(body);
+	rp('https://api.meetup.com/' + name + '/events?key=' + apiKey + '&sign=true&photo-host=public&page=20')
+		.then(function(data){
+			var parseData = JSON.parse(data);
 			res.send(parseData);
-		}
-	})
+		})
+		.catch(function(error){
+			return error
+		})
 
 });
 
@@ -52,12 +58,14 @@ router.get('/groups/:name/events/:event_id', function(req, res, next) {
 	var name = req.params.name;
 	var event = req.params.event_id;
 
-	request('https://api.meetup.com/' + name + '/events/' + event + '/rsvps?' + apiKey + '&sign=true&photo-host=public', function(error, response, body){
-		if(!error && response.statusCode == 200){
-			var parseData = JSON.parse(body);
+	rp('https://api.meetup.com/' + name + '/events/' + event + '/rsvps?' + apiKey + '&sign=true&photo-host=public')
+		.then(function(data){
+			var parseData = JSON.parse(data);
 			res.send(parseData);
-		}
-	})
+		})
+		.catch(function(error){
+			return error
+		})
 
 });
 
