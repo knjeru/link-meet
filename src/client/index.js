@@ -4,5 +4,5 @@ import App from './app/components/app.jsx';
 
 ReactDOM.render(
     <App />,
-    document.querySelector('.application')
+    document.getElementById('application')
 );
