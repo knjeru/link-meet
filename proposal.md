@@ -7,11 +7,11 @@ of this meet-up experience by providing attendees with up to date details on who
 Armed with this information users will find it easier to hone in on those individuals who are best suited to their interests!``
 
 ### Group Members
-* Dennis Bailey
-* Garan Guillory
-* Rachel Koldenhoven
-* Lina Sachuk
-* Kevin Njeru
+* [Dennis Bailey](https://github.com/dennisbailey/)
+* [Garan Guillory](https://github.com/garanguillory)
+* [Rachel Koldenhoven](https://github.com/RachelKoldenhoven)
+* [Lina Sachuk](https://github.com/LinaSachuk)
+* [Kevin Njeru](https://github.com/knjeru)
 
 ### Wireframe
  * ![WF] COMING SOON
