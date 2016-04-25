@@ -18,7 +18,7 @@ Armed with this information users will find it easier to hone in on those indivi
 
 ### Technologies Used
 - HTML/CSS/Bourbon-Neat: Front-end
-- DB: To store user data
+- MongoDB: To store user data
 - Node/Express: RESTful API service for external and internal API calls
 - JWT: User authentication
 - Pivotal Tracker: Workflow management
@@ -31,6 +31,19 @@ Armed with this information users will find it easier to hone in on those indivi
 - Allow users to view professional information on each person attending a meet-up
 - Allow users to save notes on those they wish to talk to
 - Provide dashboard for users to view their upcoming meet-ups
+
+### External Api
+* Meet-up API
+* LinkedIn API
+
+### User Interaction
+* User Inputs:
+    * Location
+    * Categories/Interests
+
+* User Outputs:
+    * Deep view for potential contacts
+
 
 ## Pivotal tracker
   [Pivotal Tracker Link](https://www.pivotaltracker.com/n/projects/1578543)
