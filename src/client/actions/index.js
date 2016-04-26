@@ -29,7 +29,7 @@ export function fetchEvents(name) {
     const request = axios.get(`${URL_BASE}/groups/:name`);
 
     return {
-        type: FETCH_CATEGORIES,
+        type: FETCH_EVENTS,
         payload: request
     }
 }
@@ -38,7 +38,7 @@ export function fetchPeople(name, event_id) {
     const request = axios.get(`${URL_BASE}/groups/:name/events/:event_id`);
 
     return {
-        type: FETCH_CATEGORIES,
+        type: FETCH_PEOPLE,
         payload: request
     }
 }

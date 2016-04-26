@@ -3,14 +3,19 @@
  */
 
 var gulp = require('gulp');
+var jshint = require('gulp-jshint');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
-//var connect = require('gulp-connect');
-//var uglify = require('gulp-uglify');
 var nodemon = require('gulp-nodemon');
+var connect = require('gulp-connect');
+var uglify = require('gulp-uglify');
+var minifyCSS = require('gulp-minify-css');
 var sass = require('gulp-sass');
+var clean = require('gulp-clean');
 var concat = require('gulp-concat');
 var runSequence = require('run-sequence');
+var webpack =  require('webpack-stream');
+var cached = require('gulp-cached');
 
 /**
  * Bourbon & Neat
@@ -24,131 +29,138 @@ var neatPaths = require('bourbon-neat').includePaths;
  */
 
 var paths = {
-  css: './src/client/styles/**/*.css',
-  scss: ['./src/client/styles/scss/*.scss',
-    './src/client/styles/scss/**/*.scss'],
-  scripts: './src/client/js/*.js',
-  server: './src/server/bin/www',
-  distServer: './dist/server/bin/www'
+    css: './src/client/styles/**/*.css',
+    scss: ['./src/client/styles/scss/*.scss',
+        './src/client/styles/scss/**/*.scss'],
+    bundler: './src/client/bundle.js',
+    server: './src/server/bin/www',
+    distServer: './dist/server/bin/www'
 };
 
-console.log('scss paths', paths.scss);
-//
+
 var nodemonConfig = {
- script: paths.server,
- ext: 'html js css',
- ignore: ['node_modules']
+    script: paths.server,
+    ext: 'html js css',
+    ignore: ['node_modules']
 };
-//
-//var nodemonDistConfig = {
-//  script: paths.distServer,
-//  ext: 'html js css',
-//  ignore: ['node_modules']
-//};
+
+var nodemonDistConfig = {
+    script: paths.distServer,
+    ext: 'html js css',
+    ignore: ['node_modules']
+};
 
 
 /**
  * Gulp Tasks
  */
 
-//gulp.task('lint', function() {
-//  return gulp.src(paths.scripts)
-//      .pipe(jshint())
-//      .pipe(jshint.reporter('jshint-stylish'));
-//});
 
-//gulp.task('browser-sync', ['nodemon'], function(done) {
-//  browserSync({
-//    proxy: "localhost:3000",  // local node app address
-//    port: 5000,  // use *different* port than above
-//    notify: true
-//  }, done);
-//});
-
-gulp.task('nodemon', function (cb) {
- var called = false;
- return nodemon(nodemonConfig)
-     .on('start', function () {
-       if (!called) {
-         called = true;
-         cb();
-       }
-     })
-     .on('restart', function () {
-       setTimeout(function () {
-         reload({ stream: false });
-       }, 1000);
-     });
+gulp.task('webpack', function() {
+    return gulp.src('./src/client/index.js')
+        .pipe(webpack( require('./webpack.config.js') ))
+        .pipe(gulp.dest(paths.bundler))
+        .pipe(cache('webpack'))
+        .pipe(browserSync.reload({stream:true}));
 });
 
-//gulp.task('lint:watch', function() {
-//  gulp.watch(paths.scripts, ['lint']);
-//});
+gulp.task('webpack:watch', function () {
+    gulp.watch(paths.bundler, ['webpack']);
+});
 
-//gulp.task('clean', function() {
-//  gulp.src('./dist/*')
-//      .pipe(clean({force: true}));
-//});
+gulp.task('browser-sync', ['nodemon'], function(done) {
+    browserSync({
+        proxy: "localhost:3000",  // local node app address
+        port: 5000,  // use *different* port than above
+        notify: true
+    }, done);
+});
+
+gulp.task('nodemon', function (cb) {
+    var called = false;
+    return nodemon(nodemonConfig)
+        .on('start', function () {
+            if (!called) {
+                called = true;
+                cb();
+            }
+        })
+        .on('restart', function () {
+            setTimeout(function () {
+                reload({ stream: false });
+            }, 1000);
+        });
+});
+
+gulp.task('lint:watch', function() {
+    gulp.watch(paths.scripts, ['lint']);
+});
+
+gulp.task('clean', function() {
+    gulp.src('./dist/*')
+        .pipe(clean({force: true}));
+});
 
 gulp.task('sass', function () {
-  return gulp.src(paths.scss)
-      .pipe(sass({
-        includePaths: ['styles'].concat(bourbonPaths, neatPaths)
-      }).on('error', sass.logError))
-      .pipe(gulp.dest('./src/client/styles/css'));
+    return gulp.src(paths.scss)
+        .pipe(sass({
+            includePaths: ['styles'].concat(bourbonPaths, neatPaths)
+        }).on('error', sass.logError))
+        .pipe(gulp.dest('./src/client/styles/css'));
 });
 
 gulp.task('sass:watch', function () {
-  gulp.watch(paths.scss[1], ['sass']);
+    gulp.watch(paths.scss[1], ['sass']);
 });
 
-//gulp.task('minify-css', function() {
-//  var opts = {comments:true, spare:true};
-//  gulp.src(paths.styles)
-//      .pipe(minifyCSS(opts))
-//      .pipe(gulp.dest('./dist/client/css/'));
-//});
-//
-//gulp.task('minify-js', function() {
-//  gulp.src(paths.scripts)
-//      .pipe(uglify())
-//      .pipe(gulp.dest('./dist/client/js/'));
-//});
+gulp.task('minify-css', function() {
+    var opts = {comments:true, spare:true};
+    gulp.src(paths.styles)
+        .pipe(minifyCSS(opts))
+        .pipe(gulp.dest('./dist/client/css/'));
+});
 
-//gulp.task('copy-server-files', function () {
-//  gulp.src('./src/server/**/*')
-//      .pipe(gulp.dest('./dist/server/'));
-//});
+gulp.task('minify-js', function() {
+    gulp.src(paths.scripts)
+        .pipe(uglify())
+        .pipe(gulp.dest('./dist/client/*/*.js'));
+});
+
+gulp.task('copy-server-files', function () {
+    gulp.src('./src/server/**/*')
+        .pipe(gulp.dest('./dist/server/'));
+});
 
 
-//gulp.task('connectDist', function (cb) {
-//  var called = false;
-//  return nodemon(nodemonDistConfig)
-//      .on('start', function () {
-//        if (!called) {
-//          called = true;
-//          cb();
-//        }
-//      })
-//      .on('restart', function () {
-//        setTimeout(function () {
-//          reload({ stream: false });
-//        }, 1000);
-//      });
-//});
+gulp.task('connectDist', function (cb) {
+    var called = false;
+    return nodemon(nodemonDistConfig)
+        .on('start', function () {
+            if (!called) {
+                called = true;
+                cb();
+            }
+        })
+        .on('restart', function () {
+            setTimeout(function () {
+                reload({ stream: false });
+            }, 1000);
+        });
+});
 
 
 // *** default task *** //
 gulp.task('default', function(){
-  runSequence(
-      ['sass', 'sass:watch', 'nodemon']
-  );
+    runSequence(
+        ['sass'],
+        ['sass:watch', 'browser-sync', 'webpack']
+    );
 });
 
 // *** build task *** //
 gulp.task('build', function() {
-  runSequence(
-      ['clean'],
-      ['lint', 'minify-css', 'minify-js', 'copy-server-files', 'connectDist']
-  );
+    runSequence(
+        ['clean'],
+        ['minify-css', 'minify-js', 'copy-server-files', 'connectDist']
+    );
 });

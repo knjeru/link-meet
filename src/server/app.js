@@ -31,6 +31,9 @@ app.use(express.static(path.join(__dirname, '../client')));
 
 
 // *** main routes *** //
+app.get('/', function(req,res,next) {
+  res.sendFile(path.join(__dirname, '../client/', 'index.html'));
+});
 app.use('/api/meetup', meetupRoutes);
 app.use('/auth', authRoute);
 
