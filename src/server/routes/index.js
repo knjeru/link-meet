@@ -36,10 +36,10 @@ router.get('/categories/:id/groups', function(req, res, next) {
 });
 
 // Get events for a specific group. The group name is the `urlname` of the group
-router.get('/groups/:name', function(req, res, next) {
+router.get('/groups/:urlname', function(req, res, next) {
 
   // Query the Meetup API to return the first 20 events for a given group name
-	rp(meetupApi + req.params.name + '/events?key=' + apiKey + '&sign=true&photo-host=public&page=20')
+	rp(meetupApi + req.params.urlname + '/events?key=' + apiKey + '&sign=true&photo-host=public&page=20')
 	
 	.then(function(data){ res.status(200).json({ status: 'success',
                                                data: JSON.parse(data) })
