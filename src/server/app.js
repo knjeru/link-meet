@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 
 
 // *** routes *** //
-var routes = require('./routes/index.js');
+var meetupRoutes = require('./routes/meetup.js');
 var authRoute = require('./routes/auth.js');
 
 
@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, '../client')));
 
 
 // *** main routes *** //
-app.use('/', routes);
+app.use('/api/meetup', meetupRoutes);
 app.use('/auth', authRoute);
 
 

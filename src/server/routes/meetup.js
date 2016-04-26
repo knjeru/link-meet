@@ -7,7 +7,7 @@ var apiKey = '475233687d4252104a1a4ff3ae2965';
 var meetupApi = 'https://api.meetup.com/';
 
 // Get Meetup categories
-router.get('/categories', function(req, res, next) {
+router.get('/', function(req, res, next) {
 
   // Query the Meetup API to return all available categories
 	rp(meetupApi + '/2/categories?key=' + apiKey + '&sign=true&photo-host=public&page=40')
@@ -22,7 +22,7 @@ router.get('/categories', function(req, res, next) {
 });
 
 // Get groups with a specific category ID. There are currently 34 categories
-router.get('/categories/:id/groups', function(req, res, next) {
+router.get('/:id/groups', function(req, res, next) {
 
   // Query the Meetup API to return the first 20 groups for a given category
 	rp(meetupApi + 'find/groups?key=' + apiKey + '&sign=true&photo-host=public&category=' + req.params.id + '&page=20')

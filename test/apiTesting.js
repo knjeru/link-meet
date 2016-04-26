@@ -12,7 +12,7 @@ describe('API routes', function() {
 
       it('should get all Meetup Categories', function(done) {
           chai.request(server)
-          .get('/categories')
+          .get('/api/meetup')
           .end(function(err, res) {
               // Check response type
               res.type.should.equal('application/json');
@@ -50,7 +50,7 @@ describe('API routes', function() {
 
       it('should get a list of Meetup groups for a category', function(done) {
           chai.request(server)
-          .get('/categories/2/groups')
+          .get('/api/meetup/2/groups')
           .end(function(err, res) {
               // Check response type
               res.type.should.equal('application/json');
@@ -91,7 +91,7 @@ describe('API routes', function() {
 
       it('should get a list of meetups for a given group', function(done) {
           chai.request(server)
-          .get('/groups/womenwhostartupcolorado')
+          .get('/api/meetup/groups/womenwhostartupcolorado')
           .end(function(err, res) {
               // Check response type
               res.type.should.equal('application/json');
@@ -130,7 +130,7 @@ describe('API routes', function() {
 
       it('should get a list of rsvps for a given meetup', function(done) {
           chai.request(server)
-          .get('/groups/womenwhostartupcolorado/events/qlmkplyvgbjc')
+          .get('/api/meetup/groups/womenwhostartupcolorado/events/qlmkplyvgbjc')
           .end(function(err, res) {
               // Check response type
               res.type.should.equal('application/json');
