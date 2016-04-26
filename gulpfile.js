@@ -3,9 +3,11 @@
  */
 
 var gulp = require('gulp');
-//var reload = browserSync.reload;
+var browserSync = require('browser-sync');
+var reload = browserSync.reload;
 //var connect = require('gulp-connect');
 //var uglify = require('gulp-uglify');
+var nodemon = require('gulp-nodemon');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var runSequence = require('run-sequence');
@@ -32,11 +34,11 @@ var paths = {
 
 console.log('scss paths', paths.scss);
 //
-//var nodemonConfig = {
-//  script: paths.server,
-//  ext: 'html js css',
-//  ignore: ['node_modules']
-//};
+var nodemonConfig = {
+ script: paths.server,
+ ext: 'html js css',
+ ignore: ['node_modules']
+};
 //
 //var nodemonDistConfig = {
 //  script: paths.distServer,
@@ -63,21 +65,21 @@ console.log('scss paths', paths.scss);
 //  }, done);
 //});
 
-//gulp.task('nodemon', function (cb) {
-//  var called = false;
-//  return nodemon(nodemonConfig)
-//      .on('start', function () {
-//        if (!called) {
-//          called = true;
-//          cb();
-//        }
-//      })
-//      .on('restart', function () {
-//        setTimeout(function () {
-//          reload({ stream: false });
-//        }, 1000);
-//      });
-//});
+gulp.task('nodemon', function (cb) {
+ var called = false;
+ return nodemon(nodemonConfig)
+     .on('start', function () {
+       if (!called) {
+         called = true;
+         cb();
+       }
+     })
+     .on('restart', function () {
+       setTimeout(function () {
+         reload({ stream: false });
+       }, 1000);
+     });
+});
 
 //gulp.task('lint:watch', function() {
 //  gulp.watch(paths.scripts, ['lint']);
@@ -139,7 +141,7 @@ gulp.task('sass:watch', function () {
 // *** default task *** //
 gulp.task('default', function(){
   runSequence(
-      ['sass', 'sass:watch']
+      ['sass', 'sass:watch', 'nodemon']
   );
 });
 
