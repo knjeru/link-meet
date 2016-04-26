@@ -28,7 +28,7 @@ router.get('/categories/:id/groups', function(req, res, next) {
 	rp(meetupApi + 'find/groups?key=' + apiKey + '&sign=true&photo-host=public&category=' + req.params.id + '&page=20')
 	
 	.then(function(data){ res.status(200).json({ status: 'success',
-                                               data: JSON.parse(data).results })
+                                               data: JSON.parse(data) })
   })
 	
 	.catch(function(error){ return error })
@@ -42,7 +42,7 @@ router.get('/groups/:name', function(req, res, next) {
 	rp(meetupApi + req.params.name + '/events?key=' + apiKey + '&sign=true&photo-host=public&page=20')
 	
 	.then(function(data){ res.status(200).json({ status: 'success',
-                                               data: JSON.parse(data).results })
+                                               data: JSON.parse(data) })
   })
   	
 	.catch(function(error) { return error });
@@ -56,7 +56,7 @@ router.get('/groups/:name/events/:event_id', function(req, res, next) {
 	rp(meetupApi + req.params.name + '/events/' + req.params.event_id + '/rsvps?' + apiKey + '&sign=true&photo-host=public')
 	
 	.then(function(data){ res.status(200).json({ status: 'success',
-                                               data: JSON.parse(data).results })
+                                               data: JSON.parse(data) })
   })
 	
 	.catch(function(error) { return error })
