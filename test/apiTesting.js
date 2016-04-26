@@ -112,10 +112,44 @@ describe('API routes', function() {
                             
               // Check data property values
               // The Meetup API geolocates your API request. This test will fail if the IP is not in Denver, CO
-              // This test will also fail as the date cahnges
+              // This test will also fail as the date changes
               res.body.data[0].id.should.equal('qlmkplyvgbjc');
               res.body.data[0].name.should.equal('Basecamp Boulder, Women Who Startup Monthly Event');
               res.body.data[0].group.name.should.equal('Women Who Startup');
+              
+              done();
+          
+          });
+      
+      });
+
+  });
+  
+  
+  describe('Get rsvps for a meetup', function() {
+
+      it('should get a list of rsvps for a given meetup', function(done) {
+          chai.request(server)
+          .get('/groups/womenwhostartupcolorado/events/qlmkplyvgbjc')
+          .end(function(err, res) {
+              // Check response type
+              res.type.should.equal('application/json');
+              
+              // Check status code and status message
+              res.status.should.equal(200);
+              res.body.status.should.equal('success');
+              
+              // Check data type              
+              res.body.data.should.be.a('array');
+              
+              // Check data property names
+              res.body.data[0].should.have.property('name');
+              res.body.data[0].should.have.property('photo');
+                            
+              // Check data property values
+              // This test could fail as the RSVPs change
+              res.body.data[0].name.should.equal('Aiko C.');
+              res.body.data[0].id.should.equal(14176278);
               
               done();
           
