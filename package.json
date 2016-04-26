@@ -4,7 +4,7 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "start": "gulp sass && node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "start": "gulp && node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "build": "webpack"
   },
   "dependencies": {
