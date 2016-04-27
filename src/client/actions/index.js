@@ -5,7 +5,7 @@ export const FETCH_GROUPS = 'FETCH_GROUPS';
 export const FETCH_EVENTS = 'FETCH_EVENTS';
 export const FETCH_PEOPLE = 'FETCH_PEOPLE';
 
-const URL_BASE = '/api/meetup';
+const URL_BASE = 'https://link-meet-server.herokuapp.com/api/meetup/';
 
 export function fetchCategories() {
     const request = axios.get(`${URL_BASE}`);

@@ -15,7 +15,7 @@ var clean = require('gulp-clean');
 var concat = require('gulp-concat');
 var runSequence = require('run-sequence');
 var webpack =  require('webpack-stream');
-var cached = require('gulp-cached');
+// var cache = require('gulp-cached');
 
 /**
  * Bourbon & Neat
@@ -32,7 +32,7 @@ var paths = {
     css: './src/client/styles/**/*.css',
     scss: ['./src/client/styles/scss/*.scss',
         './src/client/styles/scss/**/*.scss'],
-    bundler: './src/client/bundle.js',
+    bundler: './src/client/',
     server: './src/server/bin/www',
     distServer: './dist/server/bin/www'
 };
@@ -58,10 +58,30 @@ var nodemonDistConfig = {
 
 gulp.task('webpack', function() {
     return gulp.src('./src/client/index.js')
-        .pipe(webpack( require('./webpack.config.js') ))
+        .pipe(webpack({
+            watch: true,
+            module: {
+                preLoaders: [
+                    {
+                        test: /\.jsx?$/,
+                        exclude: /node_modules/,
+                        loader: 'eslint'
+
+                    }
+                ],
+                loaders: [
+                    {
+                        test: [/\.js$/, /\.jsx?$/, /\.es6$/],
+                        exclude: 'node_modules',
+                        loader: 'babel-loader'
+                    }
+                ]
+            },
+            resolve: {
+                extensions: ['', '.js', '.jsx', '.es6']
+            }
+        }))
         .pipe(gulp.dest(paths.bundler))
-        .pipe(cache('webpack'))
-        .pipe(browserSync.reload({stream:true}));
 });
 
 gulp.task('webpack:watch', function () {

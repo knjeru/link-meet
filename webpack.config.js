@@ -1,6 +1,11 @@
 const path = require('path');
 
 module.exports = {
+    entry: './src/client/index.js',
+    output: {
+        path: path.join(__dirname, './src/client'),
+        filename: 'bundle.js'
+    },
     module: {
         preLoaders: [
             {
@@ -20,5 +25,11 @@ module.exports = {
     },
     resolve: {
         extensions: ['', '.js', '.jsx', '.es6']
+    },
+    devServer: {
+        historyApiFallback: true,
+        contentBase: "./src/client",
+        hot: true,
+        port: 3000
     }
 };
