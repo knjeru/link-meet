@@ -17,7 +17,7 @@ export function fetchCategories() {
 }
 
 export function fetchGroups(id) {
-    const request = axios.get(`${URL_BASE}/:id/groups`);
+    const request = axios.get(`${URL_BASE}/${id}/groups`);
 
     return {
         type: FETCH_GROUPS,
@@ -26,7 +26,7 @@ export function fetchGroups(id) {
 }
 
 export function fetchEvents(name) {
-    const request = axios.get(`${URL_BASE}/groups/:name`);
+    const request = axios.get(`${URL_BASE}/groups/${name}`);
 
     return {
         type: FETCH_EVENTS,
