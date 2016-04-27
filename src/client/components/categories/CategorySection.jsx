@@ -24,7 +24,7 @@ class CategorySection extends Component {
         const {categories} = this.props;
 
         if(!categories.data) {
-            return <div>Loading...</div>
+            return <img src="https://www4.parinc.com/images/loading/loading_bar.gif"/>
         } else if (categories.data) {
             return (
                 <div>
