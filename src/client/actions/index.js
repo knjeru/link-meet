@@ -35,7 +35,7 @@ export function fetchEvents(name) {
 }
 
 export function fetchPeople(name, event_id) {
-    const request = axios.get(`${URL_BASE}/groups/:name/events/:event_id`);
+    const request = axios.get(`${URL_BASE}/groups/${name}/events/${event_id}`);
 
     return {
         type: FETCH_PEOPLE,

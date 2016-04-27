@@ -15,7 +15,7 @@ class EventSection extends Component {
         return this.props.events.data.map((event) => {
             return (
                 <li className="list-group-item" key={event.id}>
-                    <Link to={this.props.params.group_name + '/events/' + event.id + '/people'}>
+                    <Link to={this.props.params.group_name + '/events/' + event.id}>
                         {event.name}
                     </Link>
                 </li>
@@ -24,7 +24,6 @@ class EventSection extends Component {
     }
 
     render() {
-        console.log(this.props.events);
         const {events} = this.props;
 
         if(!events.data) {

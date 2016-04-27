@@ -11,6 +11,7 @@ export default function(state = INITIAL_STATE, action) {
         case FETCH_EVENTS:
             return{...state, events: action.payload.data};
         case FETCH_PEOPLE:
+            console.log('this is our payload', action.payload);
             return{...state, people: action.payload.data};
         default:
             return state;
