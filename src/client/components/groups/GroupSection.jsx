@@ -9,7 +9,7 @@ class GroupSection extends Component {
     }
 
     render() {
-        console.log(this.groups);
+        console.log(this.props);
         return(
             <div>Groups Section</div>
         );

@@ -5,13 +5,14 @@ import {Route, IndexRoute} from 'react-router';
 import App from './components/app';
 import HomeSection from './components/home/HomeSection';
 import CategorySection from './components/categories/CategorySection';
-// import GroupSection from './components/groups/GroupSection';
+import GroupSection from './components/groups/GroupSection';
 
 
 export default (
     <Route path="/" component={App}>
         <IndexRoute component={HomeSection} />
         <Route path="main" component={CategorySection} />
+        <Route path=":id/groups" component={GroupSection} />
     </Route>
 );
 
@@ -21,8 +22,6 @@ export default (
 // <Route path="/register" component={RegisterSection} />
 
 // <Route path="/login" component={LoginSection} />
-
-// <Route path=":id/groups" component={GroupSection} />
 
 // <Route path="groups/:name" component={EventSection} />
 
