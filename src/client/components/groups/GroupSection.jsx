@@ -9,8 +9,7 @@ class GroupSection extends Component {
     }
 
     renderGroups() {
-        console.log(this.props.groups.data)
-        return this.props.groups.data.map((group) => {
+        return this.props.groups.map((group) => {
             return (
                 <li key={group.id} className="list-group-item">
                     <Link to={group.urlname + '/events'} >
@@ -22,20 +21,14 @@ class GroupSection extends Component {
     }
 
     render(){
-        const {groups} = this.props;
-
-        if(!groups.data) {
-            return <img src="https://www4.parinc.com/images/loading/loading_bar.gif"/>
-        } else if (groups.data) {
-            return (
-                <div>
-                    <h3>Select a Group</h3>
-                    <ul className="list-group">
-                        {this.renderGroups()}
-                    </ul>
-                </div>
-            )
-        }
+        return (
+            <div>
+                <h3>Select a Group</h3>
+                <ul className="list-group">
+                    {this.renderGroups()}
+                </ul>
+            </div>
+        )
     }
 }
 
