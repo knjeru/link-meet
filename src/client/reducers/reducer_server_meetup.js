@@ -1,6 +1,6 @@
 import {FETCH_CATEGORIES, FETCH_GROUPS, FETCH_EVENTS, FETCH_PEOPLE} from '../actions/index';
 
-const INITIAL_STATE = {categories: [], groups: [], events: [], people: []};
+const INITIAL_STATE = {categories: [], groups: [], events: [], people: [], newUser: null};
 
 export default function(state = INITIAL_STATE, action) {
     switch(action.type){
@@ -11,7 +11,6 @@ export default function(state = INITIAL_STATE, action) {
         case FETCH_EVENTS:
             return{...state, events: action.payload.data};
         case FETCH_PEOPLE:
-            console.log('this is our payload', action.payload);
             return{...state, people: action.payload.data};
         default:
             return state;
