@@ -20,25 +20,28 @@ class LoginForm extends Component {
         const {fields: {email, password}, handleSubmit} = this.props;
 
         return (
-            <form onSubmit={handleSubmit(this.onSubmitForm.bind(this))}>
-                <h3>Login!</h3>
+          <div className="form" >
+            <form  onSubmit={handleSubmit(this.onSubmitForm.bind(this))}>
+
                 <div>
-                    <label>Email</label>
-                    <input type="email" className="form-control" {...email}/>
+                    <label className="form-label">Email</label>
+                    <input type="email" className="form-control form-label" {...email}/>
                 </div>
                 <div className="text-help">
                     {email.touched ? email.error : ''}
                 </div>
                 <div>
-                    <label>Password</label>
-                    <input type="password" className="form-control" {...password}/>
+                    <label className="form-label">Password</label>
+                    <input type="password" className="form-control form-label" {...password}/>
                 </div>
                 <div className="text-help">
                     {password.touched ? password.error : ''}
                 </div>
-                <button type="submit">Submit</button>
-                <Link to="/"><button type="button">Cancel</button></Link>
+
+                <button type="submit" className="form-btn">Submit</button>
+                <button type="button" className="form-btn">Cancel</button>
             </form>
+          </div>
         )
     }
 }

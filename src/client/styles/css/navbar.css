@@ -1,0 +1,28 @@
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+.navbar {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-decoration: none; }
+  .navbar::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .navbar .navBtn {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 30px;
+    color: #9c0033; }
+    .navbar .navBtn:last-child {
+      margin-right: 0; }
+
+/*# sourceMappingURL=navbar.css.map */

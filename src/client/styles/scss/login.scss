@@ -1,0 +1,15 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+
+
+.categoryNav {
+  @include outer-container;
+  .list-group {
+    @include span-columns(6 of 12);
+    text-align: center;
+    padding-top: 10px;
+    font-size: 30px;
+    color: #9c0033;
+  }
+  text-decoration: none;
+}

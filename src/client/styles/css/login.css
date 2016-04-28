@@ -1,0 +1,28 @@
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+.categoryNav {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-decoration: none; }
+  .categoryNav::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .categoryNav .list-group {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 30px;
+    color: #9c0033; }
+    .categoryNav .list-group:last-child {
+      margin-right: 0; }
+
+/*# sourceMappingURL=login.css.map */
