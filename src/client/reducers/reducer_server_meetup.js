@@ -5,13 +5,13 @@ const INITIAL_STATE = {categories: [], groups: [], events: [], people: [], newUs
 export default function(state = INITIAL_STATE, action) {
     switch(action.type){
         case FETCH_CATEGORIES:
-            return{...state, categories: action.payload.data};
+            return{...state, categories: action.payload.data.data};
         case FETCH_GROUPS:
-            return{...state, groups: action.payload.data};
+            return{...state, groups: action.payload.data.data};
         case FETCH_EVENTS:
-            return{...state, events: action.payload.data};
+            return{...state, events: action.payload.data.data};
         case FETCH_PEOPLE:
-            return{...state, people: action.payload.data};
+            return{...state, people: action.payload.data.data};
         default:
             return state;
     }

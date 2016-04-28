@@ -11,30 +11,23 @@ class PeopleSection extends Component {
   }
 
   renderPeople() {
-    return this.props.people.data.map((person) => {
+    return this.props.people.map((person) => {
       return (
-        <li className="list-group-item" key={person.id}>
+          <li className="list-group-item" key={person.id}>
             {person.name}
-        </li>
+          </li>
       )
     })
   }
 
   render() {
-    const {people} = this.props;
-
-    if(!people.data) {
-      return <img src="https://www4.parinc.com/images/loading/loading_bar.gif"/>
-    } else if (people.data) {
-      return (
+    return (
         <div>People
           <ul>
             {this.renderPeople()}
           </ul>
         </div>
-      );
-    }
-
+    );
   }
 }
 
