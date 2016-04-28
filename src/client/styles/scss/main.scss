@@ -1,8 +1,10 @@
 @import "./bourbon/bourbon";
 
+
+
 .parent {
-  background-image: url('https://russiavsengland.files.wordpress.com/2009/08/women-shaking-hands.jpg');
-  width: 800px;
+  background: url('https://russiavsengland.files.wordpress.com/2009/08/women-shaking-hands.jpg') no-repeat center center fixed;
+  background-size: cover;
   min-height: 500px;
 }
 
