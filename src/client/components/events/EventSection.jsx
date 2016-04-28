@@ -14,9 +14,9 @@ class EventSection extends Component {
     renderEvents() {
         return this.props.events.map((event) => {
             return (
-                <li className="list-group-item" key={event.id}>
+                <li className="list-group-item evtCol" key={event.id}>
                     <Link to={this.props.params.group_name + '/events/' + event.id}>
-                        {event.name}
+                        <p>{event.name}</p>
                     </Link>
                 </li>
             )
@@ -26,8 +26,8 @@ class EventSection extends Component {
     render() {
 
         return (
-            <div>Events
-                <ul>
+            <div className="text-xs-right evtBox">
+                <ul className="list-group evt">
                     {this.renderEvents()}
                 </ul>
             </div>

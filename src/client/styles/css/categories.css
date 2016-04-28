@@ -4,42 +4,43 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
-.form {
-  background: url("http://adventourscolombia.com/box_setting/images/bg_images/color/c17.jpg");
-  margin-top: 80px;
+.cat {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   text-decoration: none; }
-  .form::after {
+  .cat::after {
     clear: both;
     content: "";
     display: table; }
-  .form .form-label {
+  .cat .cateCol {
     float: left;
     display: block;
     margin-right: 2.35765%;
-    width: 48.82117%;
-    margin-left: 25.58941%;
+    width: 31.76157%;
     text-align: center;
-    padding-top: 10px;
-    font-size: 20px;
-    color: #000066; }
-    .form .form-label:last-child {
-      margin-right: 0; }
-  .form .form-btn {
-    margin: 20px;
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 48.82117%;
-    margin-left: 25.58941%;
-    height: 40px;
+    padding-top: 20px;
+    margin: 7px;
     border-radius: 10px;
-    background-color: mistyrose;
-    color: #000066;
-    font-size: 18px; }
-    .form .form-btn:last-child {
+    box-shadow: 10px 8px 5px #888888; }
+    .cat .cateCol:last-child {
       margin-right: 0; }
+    .cat .cateCol:nth-child(3n) {
+      margin-right: 0; }
+    .cat .cateCol:nth-child(3n+1) {
+      clear: left; }
+    .cat .cateCol p {
+      color: #9c0033;
+      font-size: 25px; }
+
+.title {
+  padding-top: 20px;
+  font-size: 40px;
+  margin: 20px;
+  text-align: center;
+  color: #9c0033; }
+
+.catBox {
+  background: url("http://cdn1.bestpsdfreebies.com/wp-content/uploads/2014/05/Part-1-Background-5-without-Glare.jpg"); }
 
 /*# sourceMappingURL=categories.css.map */

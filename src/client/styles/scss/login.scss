@@ -2,14 +2,31 @@
 @import "neat/neat";
 
 
-.categoryNav {
+.form {
+  background: url('http://adventourscolombia.com/box_setting/images/bg_images/color/c17.jpg');
+  margin-top: 40px;
   @include outer-container;
-  .list-group {
+  .form-label {
+
     @include span-columns(6 of 12);
+    @include shift(3);
     text-align: center;
     padding-top: 10px;
-    font-size: 30px;
+    font-size: 20px;
     color: #9c0033;
   }
+
+  .form-btn{
+    margin: 20px;
+    @include span-columns(6 of 12);
+    @include shift(3);
+    height: 50px;
+    border-radius: 10px;
+    background-color: mistyrose;
+    color: #9c0033;
+    font-size: 20px;
+
+  }
   text-decoration: none;
+
 }
