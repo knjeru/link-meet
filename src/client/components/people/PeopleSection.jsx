@@ -14,7 +14,12 @@ class PeopleSection extends Component {
     return this.props.people.map((person) => {
       return (
           <li className="list-group-item" key={person.id}>
-            {person.name}
+            <Link to={this.props.params.group_name + '/events/' + this.props.params.event_id + '/' + person.id}>
+              <div>{person.name} </div>
+              <div>
+              <img src={person.photo.thumb_link}/>
+                </div>
+            </Link>
           </li>
       )
     })
