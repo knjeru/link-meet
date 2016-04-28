@@ -5,6 +5,7 @@ export const FETCH_GROUPS = 'FETCH_GROUPS';
 export const FETCH_EVENTS = 'FETCH_EVENTS';
 export const FETCH_PEOPLE = 'FETCH_PEOPLE';
 export const CREATE_USER = 'CREATE_USER';
+export const LOGIN_USER = 'LOGIN_USER';
 
 const URL_BASE = 'https://link-meet-server.herokuapp.com/api/meetup';
 const AUTH_URL_BASE = 'https://link-meet-server.herokuapp.com/auth'
@@ -50,6 +51,15 @@ export function createUser(newUser) {
 
     return {
         type: CREATE_USER,
+        payload: request
+    }
+}
+
+export function loginUser(user) {
+    const request = axios.post(`${AUTH_URL_BASE}/login`, user);
+
+    return {
+        type: LOGIN_USER,
         payload: request
     }
 }

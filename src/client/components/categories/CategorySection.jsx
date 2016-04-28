@@ -4,6 +4,13 @@ import {fetchCategories} from '../../actions/index';
 import {Link} from 'react-router';
 
 class CategorySection extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            token: localStorage.getItem('token')
+        }
+    }
     componentWillMount() {
         this.props.fetchCategories();
     }
@@ -21,21 +28,28 @@ class CategorySection extends Component {
     }
 
     render() {
-        const {categories} = this.props;
-
-        if(!categories.data) {
-            return <img src="https://www4.parinc.com/images/loading/loading_bar.gif"/>
-        } else if (categories.data) {
+        if (!this.state.token) {
             return (
-                <div>
-                    <div className="text-xs-right">
-                        <h3>Select a category</h3>
-                        <ul className="list-group">
-                            {this.renderCategories()}
-                        </ul>
+                <div>Go Home</div>
+            )
+        }
+        if (this.state.token) {
+            const {categories} = this.props;
+
+            if (!categories.data) {
+                return <img src="https://www4.parinc.com/images/loading/loading_bar.gif"/>
+            } else if (categories.data) {
+                return (
+                    <div>
+                        <div className="text-xs-right">
+                            <h3>Select a category</h3>
+                            <ul className="list-group">
+                                {this.renderCategories()}
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            );
+                );
+            }
         }
     }
 }

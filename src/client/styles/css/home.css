@@ -1,6 +1,9 @@
 .hero {
   color: rosybrown;
-  text-align: center; }
+  text-align: center;
+  background-image: url("https://russiavsengland.files.wordpress.com/2009/08/women-shaking-hands.jpg");
+  width: 800px;
+  min-height: 500px; }
 
 .mybtn {
   margin: 20px; }
