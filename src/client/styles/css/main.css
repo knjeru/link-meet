@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
 Error: Invalid CSS after "...upstream/master": expected "{", was ""
         on line 11 of scss/main.scss
@@ -6,6 +7,12 @@ Error: Invalid CSS after "...upstream/master": expected "{", was ""
 7: }
 8: =======
 9: >>>>>>> upstream/master
+=======
+.parent {
+  background: url("https://russiavsengland.files.wordpress.com/2009/08/women-shaking-hands.jpg") no-repeat center center fixed;
+  background-size: cover;
+  min-height: 500px; }
+>>>>>>> upstream/master
 
 Backtrace:
 scss/main.scss:11

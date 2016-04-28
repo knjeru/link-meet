@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
 Error: Invalid CSS after "...kground-image: ": expected "{", was "url('https://ru..."
         on line 21 of scss/home.scss
@@ -13,6 +14,25 @@ Error: Invalid CSS after "...kground-image: ": expected "{", was "url('https://r
 24: >>>>>>> upstream/master
 25: }
 26: 
+=======
+.hero {
+  text-align: center;
+  background-image: url("https://russiavsengland.files.wordpress.com/2009/08/women-shaking-hands.jpg");
+  width: 800px;
+  min-height: 500px; }
+  .hero .logo {
+    width: 75px;
+    height: 75px; }
+    .hero .logo img {
+      border-radius: 25px;
+      width: 100%; }
+
+h1 {
+  font-size: 70px;
+  color: lightcoral;
+  text-shadow: 2px 2px darkred;
+  padding: 30px; }
+>>>>>>> upstream/master
 
 Backtrace:
 scss/home.scss:21

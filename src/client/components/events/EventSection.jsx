@@ -12,7 +12,7 @@ class EventSection extends Component {
     }
 
     renderEvents() {
-        return this.props.events.data.map((event) => {
+        return this.props.events.map((event) => {
             return (
                 <li className="list-group-item" key={event.id}>
                     <Link to={this.props.params.group_name + '/events/' + event.id}>
@@ -24,20 +24,14 @@ class EventSection extends Component {
     }
 
     render() {
-        const {events} = this.props;
 
-        if(!events.data) {
-            return <img src="https://www4.parinc.com/images/loading/loading_bar.gif"/>
-        } else if (events.data) {
-            return (
-                <div>Events
-                    <ul>
-                        {this.renderEvents()}
-                    </ul>
-                </div>
-            );
-        }
-
+        return (
+            <div>Events
+                <ul>
+                    {this.renderEvents()}
+                </ul>
+            </div>
+        );
     }
 }
 
