@@ -4,7 +4,7 @@ class NavSection extends Component {
   render() {
     console.log(this.props);
     return(
-      <div className="navbar">
+      <div className="navbar">w
 
         <a href='/main' className="navBtn"> New Search </a> 
         <a href='/profile' className="navBtn"> My Profile </a>
