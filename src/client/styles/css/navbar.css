@@ -17,12 +17,20 @@ html {
     float: left;
     display: block;
     margin-right: 2.35765%;
-    width: 23.23176%;
+    width: 18.96686%;
     text-align: center;
-    padding-top: 10px;
+    padding-top: 20px;
     font-size: 30px;
     color: #9c0033; }
     .navbar .navBtn:last-child {
+      margin-right: 0; }
+  .navbar img {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 14.70196%;
+    width: 75px; }
+    .navbar img:last-child {
       margin-right: 0; }
 
 /*# sourceMappingURL=navbar.css.map */

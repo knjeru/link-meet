@@ -11,9 +11,9 @@ class GroupSection extends Component {
     renderGroups() {
         return this.props.groups.map((group) => {
             return (
-                <li key={group.id} className="list-group-item">
+                <li  key={group.id} className="list-group-item grpCol">
                     <Link to={group.urlname + '/events'} >
-                        {group.name}
+                        <p>{group.name}</p>
                     </Link>
                 </li>
             )
@@ -22,9 +22,9 @@ class GroupSection extends Component {
 
     render(){
         return (
-            <div>
-                <h3>Select a Group</h3>
-                <ul className="list-group">
+            <div className="text-xs-right grpBox">
+                <h3 className="title">Select a Group</h3>
+                <ul className="list-group grp">
                     {this.renderGroups()}
                 </ul>
             </div>
