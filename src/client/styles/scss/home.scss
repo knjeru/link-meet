@@ -15,22 +15,22 @@
 
   }
 
-  background-image: url('https://russiavsengland.files.wordpress.com/2009/08/women-shaking-hands.jpg');
-  width: 800px;
-  min-height: 500px;
+  background: url('https://russiavsengland.files.wordpress.com/2009/08/women-shaking-hands.jpg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 600px;
 }
 
 h1{
   font-size: 70px;
   color: lightcoral;
-  text-shadow: 2px 2px darkred;
+  text-shadow: 2px 2px #9c0033;
   padding: 30px;
 }
 
 
 .mybtn{
   font-size: 23px;
-  text-shadow: 1px 1px darkred;
+  text-shadow: 1px 1px #9c0033;
   height: 35px;
   color: lightcoral;
   width: 140px;

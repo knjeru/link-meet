@@ -5,12 +5,12 @@ class NavSection extends Component {
     console.log(this.props);
     return(
       <div className="navbar">
-        <span>Meetup Minder</span>
-        <br></br>
-        <a href='/main'> New Search </a> |
-        <a href='/profile'> My Profile </a> |
-        <a href='/logout'> Logout </a>
-        <br></br>
+
+        <a href='/main' className="navBtn"> New Search </a> 
+        <a href='/profile' className="navBtn"> My Profile </a>
+          <a href='/login' className="navBtn">Login </a>
+        <a href='/logout' className="navBtn"> Logout </a>
+
       </div>    );
   }
 }

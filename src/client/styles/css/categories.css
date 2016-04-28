@@ -1,0 +1,45 @@
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+.form {
+  background: url("http://adventourscolombia.com/box_setting/images/bg_images/color/c17.jpg");
+  margin-top: 80px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-decoration: none; }
+  .form::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .form .form-label {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%;
+    margin-left: 25.58941%;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 20px;
+    color: #000066; }
+    .form .form-label:last-child {
+      margin-right: 0; }
+  .form .form-btn {
+    margin: 20px;
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%;
+    margin-left: 25.58941%;
+    height: 40px;
+    border-radius: 10px;
+    background-color: mistyrose;
+    color: #000066;
+    font-size: 18px; }
+    .form .form-btn:last-child {
+      margin-right: 0; }
+
+/*# sourceMappingURL=categories.css.map */

@@ -1,0 +1,35 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+//
+//body{
+//  background: url('http://adventourscolombia.com/box_setting/images/bg_images/color/c17.jpg');
+//}
+
+.form {
+  background: url('http://adventourscolombia.com/box_setting/images/bg_images/color/c17.jpg');
+  margin-top: 80px;
+  @include outer-container;
+  .form-label {
+
+    @include span-columns(6 of 12);
+    @include shift(3);
+    text-align: center;
+    padding-top: 10px;
+    font-size: 20px;
+    color: #000066;
+  }
+
+  .form-btn{
+    margin: 20px;
+    @include span-columns(6 of 12);
+    @include shift(3);
+    height: 40px;
+    border-radius: 10px;
+    background-color: mistyrose;
+    color: #000066;
+    font-size: 18px;
+
+  }
+   text-decoration: none;
+
+}

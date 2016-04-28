@@ -1,18 +1,16 @@
-<<<<<<< HEAD
-/*
-Error: Invalid CSS after "...upstream/master": expected "{", was ""
-        on line 11 of scss/main.scss
+html {
+  box-sizing: border-box; }
 
-6:   min-height: 500px;
-7: }
-8: =======
-9: >>>>>>> upstream/master
-=======
+*, *::after, *::before {
+  box-sizing: inherit; }
+
 .parent {
-  background: url("https://russiavsengland.files.wordpress.com/2009/08/women-shaking-hands.jpg") no-repeat center center fixed;
-  background-size: cover;
-  min-height: 500px; }
->>>>>>> upstream/master
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%; }
+  .parent:last-child {
+    margin-right: 0; }
 
 Backtrace:
 scss/main.scss:11
