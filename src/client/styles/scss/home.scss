@@ -1,6 +1,9 @@
+@import "./bourbon/bourbon";
+
 .hero{
   //font-family: fantasy;
   text-align: center;
+<<<<<<< HEAD
 
 
   .logo{
@@ -14,6 +17,11 @@
 
   }
 
+=======
+  background-image: url('https://russiavsengland.files.wordpress.com/2009/08/women-shaking-hands.jpg');
+  width: 800px;
+  min-height: 500px;
+>>>>>>> upstream/master
 }
 
 h1{

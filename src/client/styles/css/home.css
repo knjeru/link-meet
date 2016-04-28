@@ -1,4 +1,5 @@
 .hero {
+<<<<<<< HEAD
   text-align: center; }
   .hero .logo {
     width: 75px;
@@ -12,6 +13,13 @@ h1 {
   color: lightcoral;
   text-shadow: 2px 2px darkred;
   padding: 30px; }
+=======
+  color: rosybrown;
+  text-align: center;
+  background-image: url("https://russiavsengland.files.wordpress.com/2009/08/women-shaking-hands.jpg");
+  width: 800px;
+  min-height: 500px; }
+>>>>>>> upstream/master
 
 .mybtn {
   font-size: 23px;

@@ -1,7 +1,12 @@
 {
 "version": 3,
+<<<<<<< HEAD
 "mappings": "AAIA,OAAQ;EACN,UAAU,EAAE,gHAAgH;EAC5H,eAAe,EAAE,KAAK;EACtB,UAAU,EAAE,KAAK",
 "sources": ["../scss/main.scss"],
+=======
+"mappings": "",
+"sources": [],
+>>>>>>> upstream/master
 "names": [],
 "file": "main.css"
 }

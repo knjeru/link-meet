@@ -1,5 +1,5 @@
 /*
-Errno::ENOENT: No such file or directory - styles/sccs
+Errno::ENOENT: No such file or directory - styles/scss
 
 Backtrace:
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:484:in `read'
@@ -14,10 +14,10 @@ Backtrace:
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/exec/base.rb:52:in `parse'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/exec/base.rb:19:in `parse!'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/bin/sass:13:in `<top (required)>'
-/usr/bin/sass:23:in `load'
-/usr/bin/sass:23:in `<main>'
+/usr/local/bin/sass:23:in `load'
+/usr/local/bin/sass:23:in `<main>'
 */
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Errno::ENOENT: No such file or directory - styles/sccs"; }
+  content: "Errno::ENOENT: No such file or directory - styles/scss"; }

@@ -7,7 +7,6 @@ import {Link} from 'react-router';
 
 class PeopleSection extends Component {
   componentWillMount() {
-    //console.log(this.props.params);
     this.props.fetchPeople(this.props.params.group_name, this.props.params.event_id);
   }
 
