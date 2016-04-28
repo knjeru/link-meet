@@ -18,32 +18,35 @@ class RegisterForm extends Component {
         const {fields: {username, email, password}, handleSubmit} = this.props;
 
         return (
+
+            <div className="form" >
           <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-              <h3>Register!</h3>
+         
               <div>
-                  <label>UserName</label>
-                  <input type="text" className="form-control" {...username}/>
+                  <label className="form-label">UserName</label>
+                  <input type="text" className="form-control form-label" {...username}/>
               </div>
               <div className="text-help">
                   {username.touched ? username.error : ''}
               </div>
               <div>
-                  <label>Email</label>
-                  <input type="email" className="form-control" {...email}/>
+                  <label className="form-label">Email</label>
+                  <input type="email" className="form-control form-label" {...email}/>
               </div>
               <div className="text-help">
                   {email.touched ? email.error : ''}
               </div>
               <div>
-                  <label>Password</label>
-                  <input type="password" className="form-control" {...password}/>
+                  <label className="form-label">Password</label>
+                  <input type="password" className="form-control form-label"{...password}/>
               </div>
               <div className="text-help">
                   {password.touched ? password.error : ''}
               </div>
-              <button type="submit">Submit</button>
-              <Link to="/"><button type="button">Cancel</button></Link>
+              <button type="submit" className="form-btn">Submit</button>
+              <Link to="/"><button type="button" className="form-btn">Cancel</button></Link>
           </form>
+                </div>
         );
     }
 }

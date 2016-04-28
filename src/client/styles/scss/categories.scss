@@ -1,35 +1,33 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
-//
-//body{
-//  background: url('http://adventourscolombia.com/box_setting/images/bg_images/color/c17.jpg');
-//}
 
-.form {
-  background: url('http://adventourscolombia.com/box_setting/images/bg_images/color/c17.jpg');
-  margin-top: 80px;
+
+.cat {
   @include outer-container;
-  .form-label {
-
-    @include span-columns(6 of 12);
-    @include shift(3);
+  .cateCol {
+    @include span-columns(4 of 12);
+    @include omega(3n);
     text-align: center;
-    padding-top: 10px;
-    font-size: 20px;
-    color: #000066;
-  }
-
-  .form-btn{
-    margin: 20px;
-    @include span-columns(6 of 12);
-    @include shift(3);
-    height: 40px;
+    padding-top: 20px;
+    margin: 7px;
     border-radius: 10px;
-    background-color: mistyrose;
-    color: #000066;
-    font-size: 18px;
-
+    box-shadow: 10px 8px 5px #888888;
+    p{
+      color: #9c0033;
+      font-size: 25px;
+    }
   }
-   text-decoration: none;
+  text-decoration: none;
+}
 
+.title{
+  padding-top: 20px;
+  font-size: 40px;
+  margin: 20px;
+  text-align: center;
+  color: #9c0033;
+}
+
+.catBox{
+  background: url('http://cdn1.bestpsdfreebies.com/wp-content/uploads/2014/05/Part-1-Background-5-without-Glare.jpg');
 }

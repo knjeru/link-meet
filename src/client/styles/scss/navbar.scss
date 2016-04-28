@@ -3,13 +3,18 @@
 
 
 .navbar {
+
   @include outer-container;
   .navBtn {
-    @include span-columns(3 of 12);
+    @include span-columns(2.5 of 12);
     text-align: center;
-    padding-top: 10px;
+    padding-top: 20px;
     font-size: 30px;
     color: #9c0033;
   }
   text-decoration: none;
+  img{
+    @include span-columns(2 of 12);
+    width: 75px;
+  }
 }

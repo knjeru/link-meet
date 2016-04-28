@@ -11,7 +11,7 @@ class CategorySection extends Component {
     renderCategories() {
         return this.props.categories.map((category) => {
             return (
-                <li className="list-group-item" key={category.id}>
+                <li className="list-group-item cateCol" key={category.id}>
                     <Link to={category.id + '/groups'}>
                         <p>{category.name}</p>
                     </Link>
@@ -23,9 +23,9 @@ class CategorySection extends Component {
     render() {
         return (
             <div>
-                <div className="text-xs-right">
-                    <h3>Select a category</h3>
-                    <ul className="list-group">
+                <div className="text-xs-right catBox">
+                    <h3 className="title">Select a category</h3>
+                    <ul className="list-group cat">
                         {this.renderCategories()}
                     </ul>
                 </div>
