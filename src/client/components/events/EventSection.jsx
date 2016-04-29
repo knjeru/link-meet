@@ -11,22 +11,39 @@ class EventSection extends Component {
         this.props.fetchEvents(this.props.params.group_name);
     }
 
+    onClick() {
+        this.props.history.goBack();
+    }
+
     renderEvents() {
-        return this.props.events.map((event) => {
+        if (!this.props.events.length) {
             return (
-                <li className="list-group-item evtCol" key={event.id}>
-                    <Link to={this.props.params.group_name + '/events/' + event.id}>
-                        <p>{event.name}</p>
-                    </Link>
-                </li>
+              <div>
+                  <p>No upcoming events were found for {this.props.params.group_name}!</p>
+                  <button onclick={this.onClick.bind(this)}>Click here to choose a different group!</button>
+              </div>
             )
-        })
+        } else {
+            return this.props.events.map((event) => {
+                return (
+                    <li className="list-group-item evtCol" key={event.id}>
+                        <Link to={this.props.params.group_name + '/events/' + event.id}>
+                            <p>{event.name}</p>
+                        </Link>
+                    </li>
+                )
+            })
+        }
     }
 
     render() {
-
         return (
             <div className="text-xs-right evtBox">
+                <div>
+                    <button onClick={this.onClick.bind(this)}>
+                       Go Back!
+                    </button>
+                </div>
                 <ul className="list-group evt">
                     {this.renderEvents()}
                 </ul>
