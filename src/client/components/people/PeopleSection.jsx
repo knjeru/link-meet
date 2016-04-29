@@ -11,12 +11,14 @@ class PeopleSection extends Component {
   renderPeople() {
     return this.props.people.map((person) => {
       return (
-          <li className="list-group-item" key={person.id}>
+          <li className="list-group-item peopleCol" key={person.id}>
             <Link to={'person/' + person.id}>
-              <div>{person.name} </div>
               <div>
-              <img src={person.photo.thumb_link}/>
-                </div>
+                  <h2>{person.name}</h2>
+              </div>
+              <div>
+                  <img src={person.photo.thumb_link}/>
+              </div>
             </Link>
           </li>
       )
@@ -25,8 +27,8 @@ class PeopleSection extends Component {
 
   render() {
     return (
-        <div>
-          <ul>
+        <div className="peopleBox">
+          <ul className="people">
             {this.renderPeople()}
           </ul>
         </div>

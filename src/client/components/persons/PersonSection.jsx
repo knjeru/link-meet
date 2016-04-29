@@ -13,11 +13,11 @@ class PersonSection extends Component {
         const person = this.props.person;
         
         return (
-            <div>
-                <h3>{person.name}</h3>
-                <ul>
-                    <li>{person.city}, {person.state}</li>
-                    <Link to={person.id + '/personform'}>Save this person</Link>
+            <div className="personBox">
+                <h2 className="title">{person.name}</h2>
+                <ul className="person">
+                    <li className="personCol"><h2>{person.city}, {person.state}</h2></li>
+                    <Link  className="personCol" to={person.id + '/personform'}><h2>Save this person</h2></Link>
                 </ul>
             </div>
         )

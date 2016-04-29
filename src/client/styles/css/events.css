@@ -22,7 +22,8 @@ html {
     padding-top: 20px;
     margin: 7px;
     border-radius: 10px;
-    box-shadow: 10px 8px 5px #888888; }
+    box-shadow: 10px 8px 5px #888888;
+    height: 100px; }
     .evt .evtCol:last-child {
       margin-right: 0; }
     .evt .evtCol:nth-child(3n) {
