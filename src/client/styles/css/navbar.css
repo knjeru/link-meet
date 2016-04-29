@@ -17,13 +17,15 @@ html {
     float: left;
     display: block;
     margin-right: 2.35765%;
-    width: 18.96686%;
+    width: 25.7907%;
     text-align: center;
     padding-top: 20px;
     font-size: 30px;
     color: #9c0033; }
     .navbar .navBtn:last-child {
       margin-right: 0; }
+  .navbar li {
+    list-style: none; }
   .navbar img {
     float: left;
     display: block;

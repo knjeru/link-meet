@@ -39,12 +39,11 @@ class NavSection extends Component {
     render() {
         return(
             <div className="navbar">
-                <div className="logo">
+                     // https://files.slack.com/files-pri/T027GBYPB-F14TX6Q2C/download/logo.png
                     <img src="http://us.123rf.com/450wm/neyro2008/neyro20081508/neyro2008150800323/43837571-reminder-icon-hand-with-finger-on-which-is-tied-ribbon-bow.jpg?ver=6"/>
-                </div>
-                <div>
+
                     {this.renderLinks()}
-                </div>
+
             </div>
         );
     }
