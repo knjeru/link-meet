@@ -29,13 +29,22 @@ class PersonForm extends Component {
                         <label className="form-label">Avatar</label>
                         <input type="text" {...photoUrl}/>
                     </div>
+                    <div className="text-help">
+                        {photoUrl.touched ? photoUrl.error : ''}
+                    </div>
                     <div>
                         <label className="form-label">Name</label>
                         <input type="text" {...name}/>
                     </div>
+                    <div className="text-help">
+                        {name.touched ? name.error : ''}
+                    </div>
                     <div>
                         <label className="form-label">Notes</label>
-                        <textarea type="text" {...notes}/>
+                        <textarea cols="8" rows="20" type="text" {...notes}/>
+                    </div>
+                    <div className="text-help">
+                        {notes.touched ? notes.error : ''}
                     </div>
                     <button type="submit" className="form-btn">Save Person</button>
                 </form>
