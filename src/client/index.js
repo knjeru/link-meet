@@ -21,7 +21,7 @@ if(token) {
 
 ReactDOM.render(
     <Provider store={store}>
-        <Router routes={routes} />
+        <Router history={hashHistory} routes={routes} />
     </Provider>
     , document.querySelector('.application')
 );
