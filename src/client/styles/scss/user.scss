@@ -2,9 +2,9 @@
 @import "neat/neat";
 
 
-.people {
+.user {
   @include outer-container;
-  .peopleCol {
+  .userCol {
     @include span-columns(4 of 12);
     @include omega(3n);
     text-align: center;
@@ -14,13 +14,13 @@
     box-shadow: 10px 8px 5px #888888;
     h2{
       color: #9c0033;
-      font-size: 30px;
+      font-size: 25px;
     }
     img{
       width: 70px;
       border-radius: 5px;
     }
-    height: 200px;
+    height: 250px;
   }
   text-decoration: none;
 }
@@ -33,6 +33,6 @@
   color: #9c0033;
 }
 
-.peopleBox{
+.userBox{
   background: url('http://cdn1.bestpsdfreebies.com/wp-content/uploads/2014/05/Part-1-Background-5-without-Glare.jpg');
 }

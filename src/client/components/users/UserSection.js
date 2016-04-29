@@ -15,8 +15,8 @@ class UserSection extends Component {
         } else {
             return this.props.user.people.map((minder) => {
                 return (
-                    <li className="list-group-item" key={minder._id}>
-                        <p>{minder.name}</p>
+                    <li className="list-group-item userCol" key={minder._id}>
+                        <h2>{minder.name}</h2>
                         <img src={minder.photoUrl}/>
                         <p>{minder.notes}</p>
                     </li>
@@ -27,9 +27,9 @@ class UserSection extends Component {
 
     render() {
         return(
-            <div>
-                <h3>My Minders</h3>
-                <ul>
+            <div className="userBox">
+                <h3 className="title">My Minders</h3>
+                <ul className="user">
                     {this.renderMinderNotes()}
                 </ul>
             </div>
