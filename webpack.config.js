@@ -18,7 +18,7 @@ module.exports = {
         loaders: [
             {
                 test: [/\.js$/, /\.jsx?$/, /\.es6$/],
-                exclude: 'node_modules',
+                exclude: '/node_modules/',
                 loader: 'babel-loader'
             }
         ]

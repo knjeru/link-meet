@@ -6,7 +6,6 @@ import {Link} from 'react-router';
 
 class LoginForm extends Component {
 
-
     onSubmitForm(props) {
         this.props.loginUser(props)
             .then((data) => {
