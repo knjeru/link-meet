@@ -3,10 +3,12 @@ import {Route, IndexRoute} from 'react-router';
 
 // Higher Order Authorization Component
 import protectedRoutes from './components/auth_HOC/require_auth';
+
+// Presentational Components
 import App from './components/app';
 import HomeSection from './components/home/HomeSection';
 
-// Resource Components
+// App Resource Components
 import CategorySection from './components/categories/CategorySection';
 import GroupSection from './components/groups/GroupSection';
 import EventSection from './components/events/EventSection';
