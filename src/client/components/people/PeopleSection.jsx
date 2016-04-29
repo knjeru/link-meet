@@ -1,10 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {fetchPeople, fetchUserPerson} from '../../actions/index';
+import {fetchPeople} from '../../actions/index';
 import {Link} from 'react-router';
-
-
-// add button that will save the select person to the user model
 
 class PeopleSection extends Component {
   componentWillMount() {
@@ -15,7 +12,7 @@ class PeopleSection extends Component {
     return this.props.people.map((person) => {
       return (
           <li className="list-group-item" key={person.id}>
-            <Link to={this.props.params.group_name + '/events/' + this.props.params.event_id + '/' + person.id}>
+            <Link to={'person/' + person.id}>
               <div>{person.name} </div>
               <div>
               <img src={person.photo.thumb_link}/>
@@ -27,9 +24,8 @@ class PeopleSection extends Component {
   }
 
   render() {
-      console.log(this.props.people);
     return (
-        <div>People
+        <div>
           <ul>
             {this.renderPeople()}
           </ul>
@@ -43,4 +39,4 @@ function mapStateToProps(state) {
   return {people: state.meetUp.people}
 }
 
-export default connect(mapStateToProps, {fetchPeople, fetchUserPerson})(PeopleSection);
+export default connect(mapStateToProps, {fetchPeople})(PeopleSection);

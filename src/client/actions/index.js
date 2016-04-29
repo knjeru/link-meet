@@ -4,11 +4,13 @@ export const FETCH_CATEGORIES = 'FETCH_CATEGORIES';
 export const FETCH_GROUPS = 'FETCH_GROUPS';
 export const FETCH_EVENTS = 'FETCH_EVENTS';
 export const FETCH_PEOPLE = 'FETCH_PEOPLE';
+export const FETCH_PERSON = 'FETCH_PERSON';
 export const CREATE_USER = 'CREATE_USER';
+export const FETCH_USER = 'FETCH_USER';
 export const AUTH_USER = 'AUTH_USER';
 export const DEAUTH_USER = 'UNAUTH_USER';
 
-export const USER_ADDPERSON = 'USER_ADDPERSON';
+export const ADD_PERSON = 'ADD_PERSON';
 
 const URL_MEETUP = 'https://link-meet-server.herokuapp.com/api/meetup';
 const URL_AUTH = 'https://link-meet-server.herokuapp.com/auth';
@@ -60,16 +62,38 @@ export function fetchPeople(name, event_id) {
     }
 }
 
-
-// USER MEETUP DATA ACTIONS
-
-export function savePerson(person) {
-    const request = axios(`${URL_USER}`, person, {
+export function fetchPerson(member_id) {
+    const request = axios.get(`${URL_MEETUP}/member/${member_id}`, {
         headers: {authorization: token}
     });
 
     return {
-        type: USER_ADDPERSON,
+        type: FETCH_PERSON,
+        payload: request
+    }
+}
+
+
+// USER MEETUP DATA ACTIONS
+
+export function fetchUser(user_id) {
+    const request = axios.get(`${URL_USER}/${user_id}`, {
+        headers: {authorization: token}
+    });
+
+    return {
+        type: FETCH_USER,
+        payload: request
+    }
+}
+
+export function savePerson(user, person) {
+    const request = axios.put(`${URL_USER}/${user}/people`, person, {
+        headers: {authorization: token}
+    });
+
+    return {
+        type: ADD_PERSON,
         payload: request
     }
 }
@@ -97,6 +121,7 @@ export function loginUser(user) {
 
 export function signOut() {
     localStorage.removeItem('token');
+    localStorage.removeItem('id');
 
     return {
         type: DEAUTH_USER
