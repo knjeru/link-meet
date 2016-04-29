@@ -14,8 +14,9 @@ class NavSection extends Component {
                 <a href='/login' className="navBtn">Login </a>
                 <a href='/logout' className="navBtn"> Logout </a>
 
-            </div>    );
-    }
+      </div>
+    );
+  }
 }
 
 export default NavSection;

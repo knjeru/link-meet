@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {fetchPeople} from '../../actions/index';
+import {fetchPeople, fetchUserPerson} from '../../actions/index';
 import {Link} from 'react-router';
 
 
+// add button that will save the select person to the user model
 
 class PeopleSection extends Component {
   componentWillMount() {
@@ -26,6 +27,7 @@ class PeopleSection extends Component {
   }
 
   render() {
+      console.log(this.props.people);
     return (
         <div>People
           <ul>
@@ -41,4 +43,4 @@ function mapStateToProps(state) {
   return {people: state.meetUp.people}
 }
 
-export default connect(mapStateToProps, {fetchPeople})(PeopleSection);
+export default connect(mapStateToProps, {fetchPeople, fetchUserPerson})(PeopleSection);

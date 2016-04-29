@@ -21,6 +21,7 @@ class GroupSection extends Component {
     }
 
     render(){
+        console.log(this.props.groups)
         return (
             <div className="text-xs-right grpBox">
                 <h3 className="title">Select a Group</h3>

@@ -1,4 +1,4 @@
-import React,  {Component} from 'react';
+import React,  {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {fetchCategories} from '../../actions/index';
 import {Link} from 'react-router';
@@ -33,6 +33,10 @@ class CategorySection extends Component {
         );
     }
 }
+
+CategorySection.contextTypes = {
+    router: PropTypes.object
+};
 
 function mapStateToProps(state) {
     return {categories: state.meetUp.categories}
