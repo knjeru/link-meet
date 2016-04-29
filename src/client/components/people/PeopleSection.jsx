@@ -7,7 +7,7 @@ class PeopleSection extends Component {
     componentWillMount() {
         this.props.fetchPeople(this.props.params.group_name, this.props.params.event_id);
     }
-
+    
     onClick() {
         this.props.history.goBack();
     }

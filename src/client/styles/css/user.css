@@ -4,16 +4,16 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
-.people {
+.user {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   text-decoration: none; }
-  .people::after {
+  .user::after {
     clear: both;
     content: "";
     display: table; }
-  .people .peopleCol {
+  .user .userCol {
     float: left;
     display: block;
     margin-right: 2.35765%;
@@ -23,17 +23,17 @@ html {
     margin: 7px;
     border-radius: 10px;
     box-shadow: 10px 8px 5px #888888;
-    height: 200px; }
-    .people .peopleCol:last-child {
+    height: 250px; }
+    .user .userCol:last-child {
       margin-right: 0; }
-    .people .peopleCol:nth-child(3n) {
+    .user .userCol:nth-child(3n) {
       margin-right: 0; }
-    .people .peopleCol:nth-child(3n+1) {
+    .user .userCol:nth-child(3n+1) {
       clear: left; }
-    .people .peopleCol h2 {
+    .user .userCol h2 {
       color: #9c0033;
-      font-size: 30px; }
-    .people .peopleCol img {
+      font-size: 25px; }
+    .user .userCol img {
       width: 70px;
       border-radius: 5px; }
 
@@ -44,7 +44,7 @@ html {
   text-align: center;
   color: #9c0033; }
 
-.peopleBox {
+.userBox {
   background: url("http://cdn1.bestpsdfreebies.com/wp-content/uploads/2014/05/Part-1-Background-5-without-Glare.jpg"); }
 
-/*# sourceMappingURL=people.css.map */
+/*# sourceMappingURL=user.css.map */
