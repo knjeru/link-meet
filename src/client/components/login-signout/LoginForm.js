@@ -1,8 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import {reduxForm} from 'redux-form';
 import {loginUser} from '../../actions/index';
-import {Link} from 'react-router';
-
 
 class LoginForm extends Component {
 
@@ -10,6 +8,7 @@ class LoginForm extends Component {
         this.props.loginUser(props)
             .then((data) => {
                 this.context.router.push('/main');
+                localStorage.setItem('id', data.payload.data.data.user._id);
                 localStorage.setItem('token', data.payload.data.data.token);
             })
     }

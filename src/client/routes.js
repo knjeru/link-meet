@@ -14,6 +14,9 @@ import PeopleSection from './components/people/PeopleSection';
 import PersonSection from './components/persons/PersonSection';
 import PersonForm from './components/persons/PersonForm';
 
+// User Components
+import UserSection from './components/users/UserSection';
+
 // Authorization Components
 import RegisterForm from './components/register/RegisterForm';
 import LoginForm from './components/login-signout/LoginForm';
@@ -26,12 +29,13 @@ export default (
         <Route path="main" component={protectedRoutes(CategorySection)} />
         <Route path="register" component={RegisterForm}/>
         <Route path="login" component={LoginForm} />
-        <Route path="signout" component={protectedRoutes(SignOutSection)} />
+        <Route path="logout" component={protectedRoutes(SignOutSection)} />
         <Route path=":id/groups" component={protectedRoutes(GroupSection)} />
         <Route path=":group_name/events" component={protectedRoutes(EventSection)} />
         <Route path=":group_name/events/:event_id" component={protectedRoutes(PeopleSection)} />
-        <Route path="person" component={PersonSection} />
-        <Route path="personform" component={PersonForm} />
+        <Route path="person/:id" component={protectedRoutes(PersonSection)} />
+        <Route path=":id/personform" component={protectedRoutes(PersonForm)} />
+        <Route path="minders" component={protectedRoutes(UserSection)} />
     </Route>
 );
 

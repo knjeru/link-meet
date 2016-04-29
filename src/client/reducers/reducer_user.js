@@ -1,7 +1,12 @@
-import {USER_ADDPERSON} from '../actions/index';
+import {FETCH_USER} from '../actions/index';
 
-const INITIAL_STATE = {people: []};
+const INITIAL_STATE = {user: []};
 
 export default function(state = INITIAL_STATE, action) {
-//    Apply when fetching user information
+    switch(action.type) {
+        case FETCH_USER:
+            return{...state, user: action.payload.data.data};
+        default:
+            return state;
+    }
 }
